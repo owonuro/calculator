@@ -1,0 +1,78 @@
+body{margin:4px;
+background-color: black;
+	-webkit-user-select: none;
+      -webkit-touch-callout: none;
+        -moz-user-select: none;
+        -ms-user-select: none;
+        user-select: none;
+
+}
+
+#main{
+border: 3px solid black;
+
+}
+
+
+input{
+left: 3%;
+margin: auto;
+width: 94%;
+height: 13vh;
+border:2px solid grey;
+background-color: whitesmoke;
+display: block;
+text-align: right;
+font-weight:bold;
+font-size: 25px;
+color: black; 
+}
+
+#display{
+
+}
+
+
+#keys{
+left: 3%;
+margin: auto;
+margin-top: 10px;
+width: 94%;
+height: 80vh;
+border:2px solid grey;
+background-color: grey;	
+padding: 2px;
+}
+
+
+
+button{
+background-color:whitesmoke;
+text-align:center;
+width:25%;
+height: 16vh;
+border: 2px solid grey;
+cursor:pointer;
+font-weight:bold;
+font-size: 25px;
+color: black; 
+}
+
+
+button:nth-last-child(-n+1){
+	color: green;}
+
+button:nth-last-child(20){
+	color: red;}
+
+button:nth-last-child(19){
+	color: blue;}
+button:nth-last-child(18){
+	color: blue;}
+button:nth-last-child(17){
+	color: red;}
+button:nth-last-child(9){
+	color: blue;}
+button:nth-last-child(5){
+	color: blue;}
+	
