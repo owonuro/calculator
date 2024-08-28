@@ -4,8 +4,8 @@ var keys = document.getElementById('keys');
 
 var myinput =document.getElementById('display-input')
 
-var charracterKeys = ['C', '➗', '✖','⌫', 7, 8, 9, 'e', 4, 5, 6, '➖', 1, 2, 3,'➕', 0, '.','pi', '=' ]
-for (let i =0; i < charracterKeys.length; i++) {
+var charracterKeys = ['C', ' ÷ ', ' x ','⌫', 7, 8, 9, 'ˆ', 4, 5, 6, ' - ', 1, 2, 3,' + ', 0, '.','π', '=' ]
+for (let i = 0; i < charracterKeys.length; i++) {
 	/*console.log(charracterKeys[i]);*/
 	const newNode = document.createElement('button');
 	const id = document.createAttribute('id');
@@ -23,24 +23,19 @@ for (let i =0; i < charracterKeys.length; i++) {
 //This function is to replace some character for proper evaluation!
 function replaceExp(string) {
 	let repStr = string
-if(repStr.includes('✖')){
-	repStr = repStr.replace(/✖/g,'*');
+if(repStr.includes('x')){
+	repStr = repStr.replace(/x/g,'*');
 }
-if(repStr.includes('e')){
-	repStr = repStr.replace(/e/g,'**');
+if(repStr.includes('ˆ')){
+	repStr = repStr.replace(/ˆ/g,'**');
 }
-if(repStr.includes('pi')){
-	repStr = repStr.replace(/pi/g,'3.142');
+if(repStr.includes('π')){
+	repStr = repStr.replace(/π/g,'3.142');
 }
-if(repStr.includes('➗')){
-	repStr = repStr.replace(/➗/g,'/');
+if(repStr.includes('÷')){
+	repStr = repStr.replace(/÷/g,'/');
 }
-if(repStr.includes('➕')){
-	repStr = repStr.replace(/➕/g,'+');
-}
-if(repStr.includes('➖')){
-	repStr = repStr.replace(/➖/g,'-');
-}
+
 return repStr;
 }
 
@@ -48,41 +43,42 @@ return repStr;
 
 function myclick() {
 //alert(this.id);
-let inputValue = myinput.value
-
-if (inputValue == 'ERROR') {
-	inputValue = '';
-	}
+let inputValue = myinput.innerHTML
 
 if (this.id == 'C') {
 	inputValue = '';
-	myinput.value = inputValue;
+	myinput.innerHTML = inputValue;
 	return
 	}
 	
 if (this.id == '=') {
-	let editedInput = replaceExp(myinput.value);
+		let editedInput = replaceExp(myinput.innerHTML);
+
+if (editedInput.includes('/ 0')){
+alert("Can't divide with 0");
+return
+}
 		
 	try {
 		
 		let result = eval(editedInput);
-		myinput.value = result;
+		myinput.innerHTML = result;
 	return;}
 	catch (err) {
-	inputValue = 'ERROR';
-	myinput.value = inputValue;
+	alert("Wrong format!")
+	myinput.innerHTML = inputValue;
 	return
 	}
 	
 	}
 	
 if (this.id == '⌫') {
-	myinput.value = inputValue.slice(0, -1);
+	myinput.innerHTML = inputValue.slice(0, -1);
 	return
 	}
 
 inputValue +=this.id;	
-myinput.value = inputValue;
+myinput.innerHTML = inputValue;
 }
 
 /*alert('Keep solving!');

@@ -14,18 +14,19 @@ border: 3px solid black;
 }
 
 
-input{
+#display-input{
 left: 3%;
 margin: auto;
 width: 94%;
 height: 13vh;
 border:2px solid grey;
-background-color: whitesmoke;
+background-color: lightgreen;
 display: block;
 text-align: right;
 font-weight:bold;
 font-size: 25px;
 color: black; 
+overflow:auto;
 }
 
 #display{
@@ -54,13 +55,19 @@ height: 16vh;
 border: 2px solid grey;
 cursor:pointer;
 font-weight:bold;
-font-size: 25px;
+font-size: 35px;
 color: black; 
 }
 
 
 button:nth-last-child(-n+1){
 	color: green;}
+
+button:nth-last-child(2){
+	color: blue;}
+
+button:nth-last-child(13){
+	color: blue;}
 
 button:nth-last-child(20){
 	color: red;}
